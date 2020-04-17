@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <title>博客首页</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="headtop"></div>
+            <div class="contenttop">
+                <div class="logo f_l">谈同个人博客 一个前端设计的热血青年</div>
+                <div class="search f_r">
+                    <form action="http://www.baidu.com" method="post" name="searchform" id="searchform">
+                        <input name="keyboard" id="keyboard" class="input_text" placeholder="请输入关键字" type="text">
+                        <input name="show" value="title" type="hidden">
+                        <input name="tempid" value="1" type="hidden">
+                        <input name="tbname" value="news" type="hidden">
+                        <input name="Submit" class="input_submit" value="搜索" type="submit">
+                    </form>
+                </div>
+                <div class="blank"></div>
+                <nav>
+                    <div class="navigation">
+                        <ul class="menu">
+                            <li><a href="">网站首页</a></li>
+                            <% if(result.usersession){ %>
+                            <li><a href="/admin">个人管理</a></li>
+                            <li><a href="/blog">发布博客</a></li>
+                            <li><a href="/blog/showMyBlog/<%= result.usersession.userId %>">我的博客</a></li>
+                            <li><a href="/login/exit">退出登录</a></li>
+                            <% }else{ %>
+                            <li><a href="/login">登录</a></li>
+                            <li><a href="/register">注册</a></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="jztop"></div>
+        <div class="containers">
+            <div class="bloglist">
+                <% for(var i=0;i< result.blogs.length; i++){ %>
+                <div class="listrow">
+                    <h3 class="title">
+                        <a class="list_headimg" href="/blog/showSingleBlog/<%= result.blogs[i].blog_userId._id %>">
+                            <img src="image/<%= result.blogs[i].blog_userId.head_img %>">
+                        </a>
+                        <span><%= result.blogs[i].blog_userId.username %></span>
+                    </h3>
+                    <ul>
+                        <p>
+                            <%= result.blogs[i].text %>
+                        </p>
+                    </ul>
+                    <figure>
+                        <% if(result.blogs[i].blog_img){ %>
+                        <img src="image/<%= result.blogs[i].blog_img %>">
+                        <% } %>
+                    </figure>
+                    <p class="dateview">
+                        <span><%= result.blogs[i].blog_date %></span>
+                        <% if(result.usersession){ %>
+                        <span>
+                            <a class="glyphicon glyphicon-thumbs-up"
+                                href="/like/addlike/<%= result.blogs[i]._id %>"></a>
+                            (<%= result.blogs[i].fabulous %>)
+                        </span>
+                        <span>
+                            <a class="glyphicon glyphicon-heart-empty"
+                                href="/like/addlove/<%= result.blogs[i]._id %>"></a>
+                            (<%= result.blogs[i].like %>)
+                        </span>
+                        <% }else{ %>
+                        <span>
+                            <a class="glyphicon glyphicon-thumbs-up"></a>
+                            (<%= result.blogs[i].fabulous %>)
+                        </span>
+                        <span>
+                            <a class="glyphicon glyphicon-heart-empty"></a>
+                            (<%= result.blogs[i].like %>)
+                        </span>
+                        <% } %>
+                        <a class="readmore dropdownMenu_btn">查看评论&gt;&gt;</a>
+                    </p>
+                </div>
+                <div class="form menulist">
+                    <% if(result.usersession){ %>
+                    <div class="markform">
+                        <img src="image/<%= result.usersession.head_img %>" class="userimg">
+                        <form class="layui-form" action="/postmark" method="POST">
+                            <div class="layui-form-item">
+                                <input type="hidden" name="mark_useid" value="<%= result.blogs[i]._id %>">
+                                <textarea name="desc" class="layui-textarea"></textarea>
+                            </div>
+                            <input type="submit" class="input_submit">
+                        </form>
+                    </div>
+                    <% } %>
+                    <% for(var j=result.blogs[i].blog_markId.length-1;j>= 0;j--){ %>
+                    <div class="marklist">
+                        <div class="marklist_user">
+                            <img src="image/<%= result.blogs[i].blog_markId[j].userId.head_img %>">
+                            <span style="margin-left: 15px;">
+                                <%= result.blogs[i].blog_markId[j].userId.username %>&nbsp;回复
+                            </span>
+                            <span style="position: absolute;right: 0;top: 15px;">
+                                <%= result.blogs[i].blog_markId[j].mark_date %>
+                            </span>
+                        </div>
+                        <p style="margin-left: 65px;"><%= result.blogs[i].blog_markId[j].markmess %></p>
+                    </div>
+                    <% } %>
+                </div>
+                <% } %>
+            </div>
+            <div class="r_box">
+                <div class="tit01">
+                    <h3 class="tit">关注我</h3>
+                    <div class="gzwm">
+                        <ul>
+                            <li><a class="email">我的电话</a></li>
+                            <li><a class="qq">我的邮箱</a></li>
+                            <li><a class="tel">我的QQ</a></li>
+                            <li><a class="prize">个人奖项</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tuwen">
+                    <h3 class="tit">图文推荐</h3>
+                    <ul>
+                        <li>
+                            <a><img src="image/img/woman02.jpg"><b>H5新属性</b></a>
+                            <p>
+                                <span class="tulanmu"><a>PC代码</a></span>
+                                <span class="tutime">2015-02-15</span>
+                            </p>
+                        </li>
+                        <li>
+                            <a><img src="image/img/02.jpg"><b>教你怎样用欠费手机拨打电话</b></a>
+                            <p>
+                                <span class="tulanmu"><a>手机配件</a></span>
+                                <span class="tutime">2015-02-15</span>
+                            </p>
+                        </li>
+                        <li>
+                            <a><img src="image/img/3.jpeg" width="100" height="57"><b>手机的16个惊人小秘密，据说...</b></a>
+                            <p>
+                                <span class="tulanmu"><a>手机配件</a></span>
+                                <span class="tutime">2015-02-15</span>
+                            </p>
+                        </li>
+                        <li>
+                            <a><img src="image/img/06.jpg"><b>住在手机里的朋友</b></a>
+                            <p>
+                                <span class="tulanmu"><a>手机配件</a></span>
+                                <span class="tutime">2015-02-15</span></p>
+                        </li>
+                        <li>
+                            <a><img src="image/img/04.jpg"><b>教你怎样用欠费手机拨打电话</b></a>
+                            <p>
+                                <span class="tulanmu"><a>手机配件</a></span>
+                                <span class="tutime">2015-02-15</span></p>
+                        </li>
+                        <li>
+                            <a><img src="image/img/02.jpg"><b>教你怎样用欠费手机拨打电话</b></a>
+                            <p>
+                                <span class="tulanmu"><a>手机配件</a></span>
+                                <span class="tutime">2015-02-15</span>
+                            </p>
+                        </li>
+                        <li>
+                            <a><img src="image/img/3.jpeg" width="70" height="57"><b>手机的16个惊人小秘密，据说...</b></a>
+                            <p>
+                                <span class="tulanmu"><a>手机配件</a></span>
+                                <span class="tutime">2015-02-15</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ph">
+                    <h3 class="tit">点击排行</h3>
+                    <ul class="rank">
+                        <li><a>【心路历程】一篇关于设计理念的文章</a></li>
+                        <li><a>IP要突破2000+了</a></li>
+                        <li><a>帝国cms首页、自定义页面如何实现分页</a></li>
+                        <li><a>【已评选】给我模板PSD源文件，我给你设计HTML！</a></li>
+                        <li><a>【郑重申明】本站只提供静态模板下载！</a></li>
+                        <li><a>【孕期日记】生活本该如此</a></li>
+                        <li><a>【【深入理解html5系列-文本标签】…</a></li>
+                        <li><a> 2014年度优秀个人博客排名公布</a></li>
+                        <li><a>2014年度优秀个人博客评选活动</a></li>
+                        <li><a>使用CSS3制作文字、图片倒影</a></li>
+                        <li><a>【分享】css3侧边栏导航不同方向划出效果</a></li>
+                        <li><a>分</a></li>
+                    </ul>
+                </div>
+                <div class="ad"> <img src="image/img/woman04.jpg" height="300" width="110"> </div>
+            </div>
+        </div>
+        <div class="jzend"></div>
+        <footer>
+            <div class="footer">
+                <div class="f_l">
+                    <p>All Rights Reserved 版权所有：<a>谈同个人博客</a> 备案号：陕ICP备17018883号</p>
+                </div>
+                <div class="f_r textr">
+                    <p>157956315</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="input_submit" id="totopbtn">顶部</div>
+    <script type="text/javascript" src="js/mudle.js"></script>
+</body>
+
+</html>

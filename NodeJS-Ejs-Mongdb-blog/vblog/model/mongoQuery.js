@@ -1,0 +1,105 @@
+
+module.exports = {
+
+    insertData:function(model,callback){
+        model.save(function(err,data){
+            if(err){
+                console.log(err);
+            }else{
+                callback(data);
+            }
+        })
+    },
+    delData:function(model,wherestr,callback){
+        model.remove(wherestr,function(err,data){
+            if(err){
+                console.log(err);
+            }else{
+                console.log(data);
+                callback(data);
+            }
+        })
+
+    },
+    delIdData:function(model,whereId,callback){
+        model.findByIdAndRemove(whereId,function(err,data){
+            if(err){
+                console.log(err);
+            }else{
+                console.log(data);
+                callback(data);
+            }
+        })
+
+    },
+    updateDate:function(model,wherestr,updatestr,callback){
+        model.update(wherestr,updatestr,function(err,data){
+            if(err){
+                console.log(err);
+            }else{
+                console.log(data);
+                callback(data);
+            }
+        })
+
+    },
+    updateIdDate:function(model,whereId,updatestr,callback){
+        model.findByIdAndUpdate(whereId,updatestr,function(err){
+            if(err){
+                console.log(err);
+            }
+            callback();
+        })
+
+    },
+    findData:function(model,wherestr,callback){
+        model.find(wherestr,function(err,data){
+            if(err){
+                console.log(err);
+            }else{
+                callback(data);
+            }
+        })
+    },
+    findAll:function(model,callback){
+        model.find(function(err,data){
+            if(err){
+                console.log(err);
+            }else{
+                callback(data);
+            }
+        })
+    },
+    findSinglePopulate:function(model,pathId,callback){
+        model.find().populate(pathId).exec(function(err,data){
+            if(err){
+                console.log(err);
+                return;
+            }else{
+                callback(data);
+            }
+        });
+    },
+    findPopulate:function(model,wherestr,pathId,callback){
+        model.find(wherestr).populate(pathId).exec(function(err,data){
+            if(err){
+                console.log(err);
+                return;
+            }else{
+                callback(data);
+            }
+        });
+    },
+    findAllPopulate:function(model,pathId1,pathId2,callback){
+        model.find().populate({
+            path: pathId1,
+            populate:{path:pathId2}
+        }).exec(function(data){
+            try{
+                callback(data);
+            }catch(e){
+                console.log(e);
+            }
+        });
+    }
+}

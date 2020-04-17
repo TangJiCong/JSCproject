@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>个人管理</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="headtop"></div>
+            <div class="contenttop">
+                <div class="logo f_l">谈同个人博客 一个前端设计的热血青年</div>
+                <div class="search f_r">
+                    <form action="http://www.baidu.com" method="post" name="searchform" id="searchform">
+                        <input name="keyboard" id="keyboard" class="input_text" placeholder="请输入关键字" type="text">
+                        <input name="show" value="title" type="hidden">
+                        <input name="tempid" value="1" type="hidden">
+                        <input name="tbname" value="news" type="hidden">
+                        <input name="Submit" class="input_submit" value="搜索" type="submit">
+                    </form>
+                </div>
+                <div class="blank"></div>
+                <nav>
+                    <div class="navigation">
+                        <ul class="menu">
+                            <li><a href="/">网站首页</a></li>
+                            <li><a href="/blog">发布博客</a></li>
+                            <li><a href="/blog/showMyBlog/<%= usersession.userId %>">我的博客</a></li>
+                            <li><a href="/login/exit">退出登录</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="jztop"></div>
+        <div class="containers">
+            <table class="table table-hover text-center" style="margin-top: 50px;">
+                <caption class="text-center tabCap">您的账号信息</caption>
+                <tbody>
+                    <tr>
+                        <td>头像</td>
+                        <td>用户名</td>
+                        <td>密码</td>
+                        <td>邮箱</td>
+                        <td>操作</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <img src="/image/<%= result[0].head_img %>" class="head_img">
+                        </td>
+                        <td style="line-height: 50px;">
+                            <%= result[0].username %>
+                        </td>
+                        <td style="line-height: 50px;">
+                            <%= result[0].password %>
+                        </td>
+                        <td style="line-height: 50px;">
+                            <%= result[0].email %>
+                        </td>
+                        <td style="line-height: 50px;">
+                            <a href="/admin/adminUpdate/<%= result[0]._id %>">修改</a>/
+                            <a href="/admin/adminLogoff/<%= result[0]._id %>">注销</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="jzend"></div>
+        <footer>
+            <div class="footer">
+                <div class="f_l">
+                    <p>All Rights Reserved 版权所有：<a>谈同个人博客</a> 备案号：陕ICP备17018883号</p>
+                </div>
+                <div class="f_r textr">
+                    <p>157956315</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

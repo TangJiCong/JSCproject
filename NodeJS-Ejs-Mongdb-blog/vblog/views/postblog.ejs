@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <title>发布博客</title>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="headtop"></div>
+            <div class="contenttop">
+                <div class="logo f_l">谈同个人博客 一个前端设计的热血青年</div>
+                <div class="search f_r">
+                    <form action="http://www.baidu.com" method="post" name="searchform" id="searchform">
+                        <input name="keyboard" id="keyboard" class="input_text" placeholder="请输入关键字" type="text">
+                        <input name="show" value="title" type="hidden">
+                        <input name="tempid" value="1" type="hidden">
+                        <input name="tbname" value="news" type="hidden">
+                        <input name="Submit" class="input_submit" value="搜索" type="submit">
+                    </form>
+                </div>
+                <div class="blank"></div>
+                <nav>
+                    <div class="navigation">
+                        <ul class="menu">
+                            <li><a href="/">网站首页</a></li>
+                            <li><a href="/admin">个人管理</a></li>
+                            <li><a href="/blog/showMyBlog/<%= usersession.userId %>">我的博客</a></li>
+                            <li><a href="/login/exit">退出登录</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="jztop"></div>
+        <div class="containers">
+            <form action="/blog/doBlog" method="POST" enctype="multipart/form-data" class="postmarkform">
+                <div class="form-group">
+                    <label for="textareaId">博客文章</label>
+                    <textarea class="form-control" rows="3" id="textareaId" name="blogtext"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">上传图片</label>
+                    <input type="file" id="exampleInputFile" name="blogfile">
+                    <p class="help-block">只可以上传图片</p>
+                </div>
+                <button type="submit" class="btn btn-info">发表</button>
+            </form>
+        </div>
+        <div class="jzend"></div>
+        <footer>
+            <div class="footer">
+                <div class="f_l">
+                    <p>All Rights Reserved 版权所有：<a>谈同个人博客</a> 备案号：陕ICP备17018883号</p>
+                </div>
+                <div class="f_r textr">
+                    <p>157956315</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
