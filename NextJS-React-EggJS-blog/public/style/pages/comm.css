@@ -1,0 +1,337 @@
+body {
+  width: 100%;
+  cursor: crosshair;
+  
+}
+
+pre{
+  display: block;
+  background-color:#f3f3f3;
+   padding: .5rem !important;
+   overflow-y: auto;
+   font-weight: 300;
+   font-family: Menlo, monospace;
+   border-radius: .3rem;
+}
+pre{
+  background-color: #283646 !important;
+}
+pre >code{
+  border:0px !important;
+  background-color: #283646 !important;
+  color:#FFF;
+
+}
+code {
+  display: inline-block ;
+  background-color:#f3f3f3;
+  border:1px solid #fdb9cc;
+  border-radius:3px;
+  font-size: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color:#4f4f4f;
+  margin: 0px 3px;
+
+}
+/* --------------- */
+.headTextLeft{
+  text-align: left;
+  width: 100%;
+}
+.headTextRight{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+/* 首页 */
+.comm-left {
+  margin-right: 5px;
+}
+.comm-right{
+  margin-left: 5px;
+}
+.comm-middle {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: .3rem;
+  border-radius: .3rem;
+  /* border: 1px solid #eee; */
+}
+
+.comm-box {
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-left: .5rem;
+  padding: .3rem;
+  border-radius: .3rem;
+  /* border: 1px solid #eee; */
+
+
+}
+
+.comm-main {
+  /* margin-top: .5rem; */
+  margin-top: 3.3rem;
+}
+
+.list-title {
+  
+  padding: 0 0.5rem;
+}
+.list-title a{
+  padding: 4px 8px;
+  line-height: 14px;
+  border-radius: 3px;
+  background-color: #22a6b3;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 1px 1px 5px #d3cfcf;
+}
+.list-context {
+  color: #fff;
+  padding: .5rem;
+}
+
+.list-icon {
+  padding: .5rem 0;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.list-iconBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-iconText1,.list-iconText2,.list-iconText3{
+  background-color: #ff6b6b;
+  padding: 2px 4px;
+  font-size: 12px;
+  line-height: 12px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px #d3cfcf;
+}
+.list-iconText1{
+  background-color: #ff6b6b;
+}
+.list-iconText2{
+  background-color: aqua;
+}
+.list-iconText3{
+  background-color: #00a1d6;
+}
+.list-icon span {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+/* ------------博客信息------------------- */
+.author-div,.author-progressBox{
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: .3rem;
+  /* border: 1px solid rgba(255, 255, 255, 0.8); */
+  color:#fff;
+}
+.author-height{
+  
+  margin-top: .3rem;
+}
+.author-div div{
+  margin-bottom: 1rem;
+
+}
+.author-introduction{
+  font-size:.8rem;
+}
+.ant-divider-inner-text{
+  color:#fff;
+}
+
+.account{
+  background-color: #00a1d6;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+.account:hover{
+  background-color: chartreuse;
+}
+.author-userInfo{
+  width: 100%;
+
+}
+.author-left{
+  text-align: left;
+}
+.author-right{
+  text-align: right;
+}
+/* -------------背景------------------ */
+.blogBox{
+  position: relative;
+  z-index: 66;
+}
+
+.fireworks{
+  position:fixed;
+  left:0;
+  top:0;
+  z-index: 999999999;
+  pointer-events:none;
+}
+.particlesJs{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  left: 0;
+  top: 0;
+  background-image: url(/static/img/bg.jpg);
+  background-size: cover;
+}
+
+/* --------- 侧边栏导航 ---------------- */
+.navbar{
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-left: .5rem;
+  padding: .3rem;
+  border-radius: .3rem;
+  font-size: 1rem;
+}
+
+.ant-menu{
+  background-color: rgba(255, 255, 255, 0) !important;
+  
+  color:#fff;
+}
+.ant-menu-sub.ant-menu-inline li.ant-menu-item{
+  box-shadow: 0 0 5px #ccc;
+}
+.ant-menu>li{
+  box-shadow: 0 0 5px #333;
+}
+.ant-menu a{
+  color:#fff;
+  font-size: 1rem;
+}
+.ant-menu-inline{
+  border: none;
+}
+.ant-menu-submenu > .ant-menu {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.ant-breadcrumb {
+  color: #F067B4;
+  font-weight: bolder;
+}
+
+.ant-list-split .ant-list-item{
+  border-bottom: none;
+  box-shadow: 0 -5px 4px #d3cfcf;
+}
+.ant-list-split .ant-list-item:last-child {
+  box-shadow: 0 0 10px #d3cfcf;
+}
+
+/* ----------- */
+
+/* -------------分页------------*/
+.pageBox{
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+/* --------------- */
+.ant-drawer-header{
+  background-color: rgba(255,255,255,1);
+}
+@keyframes masked-animation {
+  0% {
+      background-position: 0  0;
+  }
+  100% {
+      background-position: -100%  0;
+  }
+}
+.ant-drawer-title{
+  color: #00a1d6;
+  font-weight: bold;
+  background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+  -webkit-text-fill-color: transparent;  
+  -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+  -webkit-background-size: 200% 100%; 
+  -webkit-animation: masked-animation 4s linear infinite;
+}
+.ant-drawer-content{
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.menuBtn{
+  display: none;
+  font-size: 26px !important;
+  padding-right: 15px;
+  color: #4C83FF;
+}
+
+
+.ant-divider-inner-text{
+  width: 100%;
+  /* display: flex;
+  justify-content: center;
+  letter-spacing: 3px;
+  font-weight: bold; */
+  background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+  -webkit-text-fill-color: transparent;  
+  -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+  -webkit-background-size: 200% 100%; 
+  -webkit-animation: masked-animation 4s linear infinite;
+  font-size: 18px;
+}
+.author-progressRow{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 5px 5px #ccc;
+}
+.author-progressTile{
+  color: #fff;
+  
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+.author-progress{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ant-progress-text{
+  color: #fff;
+}
+
+.ant-list-split .ant-list-header{
+  border-bottom: none;
+}
+
+.ant-anchor-link-title{
+  color: #fff;
+}
+@media (max-width: 992px){
+  .menuBtn{
+    display: inline-block;
+  }
+}
+@media (max-width: 768px){
+  .list-icon {
+    display: block;
+  }
+  .list-icon .list-iconBox{
+    display: block;
+  }
+}

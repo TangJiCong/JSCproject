@@ -1,0 +1,50 @@
+
+.ad-div{
+    margin-top: .3rem;
+    position: relative;
+    padding: .3rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: .3rem;
+    color:#fff;
+}
+.ad-div div{
+    border-radius: .3rem;
+    overflow: hidden;
+}
+.ant-carousel .slick-dots-bottom {
+   bottom: 0;
+}
+
+.ant-carousel .slick-dots{
+    text-align: center;
+    align-items: flex-end;
+}
+.ant-carousel .slick-dots li{
+    height: 8px;
+}
+.imgBtn{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    background: #000;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.imgBtn:hover{
+    background-color: #1FA5AD;
+}
+.left{
+    left: .3rem;
+}
+.right{
+    right: .3rem;
+}
+.swipeBox img{
+    width: 100%;
+}
