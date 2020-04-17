@@ -1,0 +1,40 @@
+
+.list-context img {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #f0f0f0;
+    max-width: 1000px !important;
+    display: block;
+    margin: 8px auto;
+
+}
+
+.listTitle {
+    font-size: 30px;
+    color: cyan;
+    text-indent: .5rem;
+}
+
+
+/* -----------列表页 --------*/
+.bread-div {
+    padding: 15px 0;
+}
+
+.ant-breadcrumb {
+    font-size: 18px;
+    letter-spacing: 0;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135
+}
+
+.ant-breadcrumb a{
+    color: #00a1d6;
+}
+.ant-breadcrumb > span:last-child {
+    color: #32CCBC;
+    
+}
+
+.ant-breadcrumb-separator {
+    color: #3CD500;
+}

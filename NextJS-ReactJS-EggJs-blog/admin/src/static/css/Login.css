@@ -1,0 +1,34 @@
+
+.login-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-div h1{
+    color: #fff;
+    
+    width: 680px;
+    text-align: left;
+    font-size: 100px;
+    
+    transform-origin:50% 50%;
+    animation: skyset 5s infinite linear;
+}
+@keyframes skyset {
+    from{
+        transform:rotate(0deg);
+      }
+      to{
+         transform:rotate(360deg);
+      }
+}
+body{
+    background-color: #f0f0f0;
+}
