@@ -28,14 +28,14 @@ module.exports = appInfo => {
     client: {
       // host
       host: 'localhost',
-      //host: '49.235.78.245',
+      
       // port
       port: '3306',
       // username
       user: 'root',
       // password
-      //password: 'TJC2201449931',
-      password: '@TJCtjc2201449931',
+      
+      password: '123456',
       // database
       database: 'react_blog',    
     },
@@ -53,7 +53,7 @@ module.exports = appInfo => {
   }
   config.cors = {
     origin: 'http://localhost:3000', 
-    //origin: 'http://www.luckyyounth.xyz',
+    
     credentials: true,  
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
   }
